@@ -4,7 +4,7 @@
 *
 * Дата реализации: 09.11.2022 22:03
 *
-* Дата изменения: 10.11.2022 8:07
+* Дата изменения: 10.11.2022 8:31
 *
 * Утилита для работы с базой данных пользователи
 */
@@ -12,8 +12,7 @@ if ((include 'User.php') == TRUE) {
     if (!class_exists('User')) {
         exit("<p>Compilation error</p>");
 	}
-}
-else{
+} else{
     exit("<p>Compilation error</p>");
 }
 
@@ -26,7 +25,7 @@ else{
 или создает нового с заданной информацией.
  */
 class UserService{
-    public $idList = array();
+    private $idList = array();
     function __construct($values)
     {
         foreach ($values as $id) {

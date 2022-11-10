@@ -4,7 +4,7 @@
 *
 * Дата реализации: 09.11.2022 12:57
 *
-* Дата изменения: 10.11.2022 8:07
+* Дата изменения: 10.11.2022 8:31
 *
 * Утилита для работы с базой данных пользователи
 */
@@ -18,7 +18,7 @@
  */
 class User
 {
-    public mysqli $link;
+    private mysqli $link;
     private int $id;
     private ?string $name;
     private ?string $surname;
@@ -71,6 +71,7 @@ class User
                 echo "wrong date <br>";
                 return;
             }
+            
             if(empty($name) || empty($surname) || empty($birthday) || empty($city)){
                 echo "empty field <br>";
                 return;
